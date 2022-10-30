@@ -21,6 +21,6 @@ spec:
     spec:
       containers:
         - name: web-community
-          image: 087600766519.dkr.ecr.ap-northeast-2.amazonaws.com/web:47
+          image: 087600766519.dkr.ecr.ap-northeast-2.amazonaws.com/web:48
           ports:
             - containerPort: 9091
