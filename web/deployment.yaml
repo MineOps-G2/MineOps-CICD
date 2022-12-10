@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: web
+  name: mineops-web
   annotations:
     notifications.argoproj.io/subscribe.on-sync-succeeded.slack: cicd
     notifications.argoproj.io/subscribe.on-sync-failed.slack: cicd
@@ -10,17 +10,18 @@ metadata:
     notifications.argoproj.io/subscribe.on-deployed.slack: cicd
     notifications.argoproj.io/subscribe.on-health-degraded.slack: cicd
 spec:
-  selector:
+  selector:i
     matchLabels:
-      app: web
+      app: mineops-web
   replicas: 2
   template:
     metadata:
       labels:
-        app: web
+        app: mineops-web
     spec:
       containers:
-        - name: web-community
-          image: 087600766519.dkr.ecr.ap-northeast-2.amazonaws.com/web:51
+        - name: mineops-web
+          image: chogudwns/mineops:45
+          imagePullPolicy: Always
           ports:
             - containerPort: 9091
